@@ -1,4 +1,10 @@
-export const Header = ({ totalCount, favoriteCount }) => {
+import { useSelector } from 'react-redux'
+import { selectMaterialsCount, selectFavoriteCount } from "../store/materialsSlice";
+
+export const Header = () => {
+  const totalCount = useSelector(selectMaterialsCount)
+  const favoriteCount = useSelector(selectFavoriteCount)
+
   return (
     <header className="header">
       <div>
